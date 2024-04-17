@@ -1,0 +1,6 @@
+@backend_mxm_webDiet_HostAddress = http://localhost:5265
+
+GET {{backend_mxm_webDiet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
