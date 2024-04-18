@@ -1,8 +1,5 @@
-using mxm_webDiet.Domains.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
-using System.Text;
-using System.Net.Http.Headers;
+using mxm_webDiet.Infra.Services;
 
 
 namespace mxm_webDiet.Controllers;
@@ -12,34 +9,31 @@ namespace mxm_webDiet.Controllers;
 
 public class DietController : ControllerBase
 {
-    private readonly HttpClient _httpClient;
+    private readonly DietService _dietService;
 
-    public DietController(HttpClient httpClient)
+    public DietController(DietService dietService)
     {
-        _httpClient = httpClient;
+         _dietService = dietService;
     }
 
     [HttpGet]
 
-    public async Task<IActionResult> Get(string text, [FromServices] IConfiguration configuration)
+    public async Task<IActionResult> Get(string text)
     {
-        var token = configuration.GetValue<string>("API_KEY");
+        try
+        {
+            var content = _dietService.CreateContent(text);
+            var response = await _dietService.SendRequestToOpenAI(content);
 
-        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-        var model = new RequestApiModel(text);
-
-        var requestBody = JsonSerializer.Serialize(model);
-
-        var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-
-        var response = await _httpClient.PostAsync("https://api.openai.com/v1/completions", content);
-
-        var result = await response.Content.ReadFromJsonAsync<ResponseApiModel>();
-
-        var promptResponse = result?.choices.First();
-        
-        return Ok(promptResponse?.text?.Replace("\n","").Replace("\t",""));
+            if (!string.IsNullOrEmpty(response))
+            {
+                return Ok(response);
+            }
+            return BadRequest("Não foi possível montar sua dieta");
+        }
+        catch (Exception e)
+            {
+                return StatusCode(500, "Não foi possível acessar sua dieta: " + e.Message);
+            } 
     }
-
 }

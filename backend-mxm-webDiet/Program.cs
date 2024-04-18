@@ -1,11 +1,12 @@
 using mxm_webDiet.Controllers;
+using mxm_webDiet.Infra.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
 builder.Services.AddHttpClient<DietController>();
-
+builder.Services.AddScoped<DietService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -20,9 +21,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.MapControllers();
-
-
-
 app.Run();
