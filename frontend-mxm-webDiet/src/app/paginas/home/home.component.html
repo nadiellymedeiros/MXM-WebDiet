@@ -1,0 +1,64 @@
+<nav>
+  <div class="bland">
+    <h1>MXM-WebDiet</h1>
+  </div>
+</nav>
+
+<div class="bodyHome">
+  <h1>Crie sua dieta</h1>
+  <form [formGroup]="formularioDieta">
+    <input
+      type="text"
+      formControlName="nome"
+      placeholder="Informe seu nome"
+      class="form-control"
+    />
+    <input
+      type="text"
+      formControlName="cpf"
+      placeholder="Informe seu CPF"
+      class="form-control"
+    />
+    <input
+      type="text"
+      formControlName="idade"
+      placeholder="Informe sua idade"
+      class="form-control"
+    />
+    <input
+      type="text"
+      formControlName="altura"
+      placeholder="Informe seu altura"
+      class="form-control"
+    />
+    <input
+      type="text"
+      formControlName="peso"
+      placeholder="Informe seu peso"
+      class="form-control"
+    />
+    <input
+      type="text"
+      formControlName="sexo"
+      placeholder="Informe seu sexo"
+      class="form-control"
+    />
+
+    <div class="btnCreateDiet">
+      <button class="btn" type="submit" (click)="criarPrompt()">
+        Criar Dieta
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="bodyDieta" *ngIf="dietaDisponivel" id="dietaSection">
+  <div class="titles">
+    <h1>Seja bem-vinda, {{ nome }}</h1>
+    <h2>Sua dieta:</h2>
+  </div>
+
+  <div class="dietas">
+    <div class="dieta">{{ dieta }}</div>
+  </div>
+</div>

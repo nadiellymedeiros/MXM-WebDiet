@@ -17,7 +17,6 @@ public class DietController : ControllerBase
     }
 
     [HttpGet]
-
     public async Task<IActionResult> Get(string text)
     {
         try

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("backend-mxm-webDiet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bc1cf6bc0934e42d0141983aea46f31d8eaeb8a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+986b02db6b66d06e58faa0a72ece372bb43a0aba")]
 [assembly: System.Reflection.AssemblyProductAttribute("backend-mxm-webDiet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("backend-mxm-webDiet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
