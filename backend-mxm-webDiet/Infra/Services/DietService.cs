@@ -17,9 +17,9 @@ public class DietService
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
     }
 
-    public StringContent CreateContent(string text)
+    public StringContent CreateContent(Dieta dieta)
         {
-        var model = new RequestApiModel(text);    
+        var model = new RequestApiModel(dieta);    
         var requestBody = JsonSerializer.Serialize(model);         
         var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
         return content;

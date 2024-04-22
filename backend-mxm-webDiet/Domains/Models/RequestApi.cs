@@ -3,11 +3,11 @@
   
   public class RequestApiModel
     {
-public RequestApiModel(string prompt)
+public RequestApiModel(Dieta dieta)
 {
      model = "gpt-3.5-turbo-instruct";
-    this.prompt = $"Preciso de um dieta para emagrecer, para um dia completo, {prompt}";   
-    max_tokens = 500;
+    this.prompt = $"Preciso de um dieta para um dia completo, tenho{dieta.Idade} anos, peso {dieta.Peso}, tenho {dieta.Peso}m de altura e meu sexo é {dieta.Sexo}";   
+    max_tokens = 15;
     temperature = 0;
 
 }
