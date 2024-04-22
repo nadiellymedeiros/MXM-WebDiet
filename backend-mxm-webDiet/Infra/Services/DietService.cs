@@ -20,7 +20,7 @@ public class DietService
     public StringContent CreateContent(string text)
         {
         var model = new RequestApiModel(text);    
-        var requestBody = JsonSerializer.Serialize(model);       
+        var requestBody = JsonSerializer.Serialize(model);         
         var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
         return content;
         }
@@ -38,5 +38,18 @@ public class DietService
         {
           throw new Exception($"Erro ao enviar solicitação para OpenAI: {ex.Message}");
         }     
-    }    
+    } 
+
+    public async Task<string> GetPrompt(HttpResponseMessage response)
+        {
+            var result = await response.Content.ReadFromJsonAsync<ResponseApiModel>();
+            var prompt = result?.choices.First();
+            
+             if (prompt != null)
+            {
+                var sendResponse = prompt?.text?? "";
+                return sendResponse;
+            }
+            return string.Empty;;
+        }   
 }

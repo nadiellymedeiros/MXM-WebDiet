@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using mxm_webDiet.Domains.Models;
 using mxm_webDiet.Infra.Services;
 
 
@@ -16,17 +17,17 @@ public class DietController : ControllerBase
          _dietService = dietService;
     }
 
-    [HttpGet]
-    public async Task<IActionResult> Get(string text)
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Dieta dieta)
     {
         try
         {
-            var content = _dietService.CreateContent(text);
+            var content = _dietService.CreateContent(dieta);
             var response = await _dietService.SendRequestToOpenAI(content);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return Ok(response);
+                return  Ok("{\"resposta\": \"" + response + "\"}");;
             }
             return BadRequest("Não foi possível montar sua dieta");
         }
