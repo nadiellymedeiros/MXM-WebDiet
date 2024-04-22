@@ -7,42 +7,168 @@
 <div class="bodyHome">
   <h1>Crie sua dieta</h1>
   <form [formGroup]="formularioDieta">
-    <input
-      type="text"
-      formControlName="nome"
-      placeholder="Informe seu nome"
-      class="form-control"
-    />
-    <input
-      type="text"
-      formControlName="cpf"
-      placeholder="Informe seu CPF"
-      class="form-control"
-    />
-    <input
-      type="text"
-      formControlName="idade"
-      placeholder="Informe sua idade"
-      class="form-control"
-    />
-    <input
-      type="text"
-      formControlName="altura"
-      placeholder="Informe seu altura"
-      class="form-control"
-    />
-    <input
-      type="text"
-      formControlName="peso"
-      placeholder="Informe seu peso"
-      class="form-control"
-    />
-    <input
-      type="text"
-      formControlName="sexo"
-      placeholder="Informe seu sexo"
-      class="form-control"
-    />
+    <div class="input">
+      <input
+        type="text"
+        formControlName="nome"
+        placeholder="Informe seu nome"
+        class="form-control"
+      />
+      <div
+        class="errorInput"
+        *ngIf="formularioDieta.get('nome')?.errors?.['required'] && formularioDieta.get('nome')?.touched"
+      >
+        <span class="error-message">Por favor, preencha seu nome.</span>
+      </div>
+      <div
+        class="errorInput"
+        *ngIf="
+          formularioDieta.get('nome')?.invalid &&
+          formularioDieta.get('nome')?.dirty
+        "
+      >
+        <div *ngIf="formularioDieta.get('nome')?.errors?.['required']">
+          O nome é obrigatório.
+        </div>
+        <div *ngIf="formularioDieta.get('nome')?.errors?.['minlength']">
+          O nome deve ter pelo menos 8 caracteres.
+        </div>
+        <div *ngIf="formularioDieta.get('nome')?.errors?.['pattern']">
+          O nome deve conter apenas letras e espaços.
+        </div>
+      </div>
+    </div>
+
+    <div class="input">
+      <input
+        type="text"
+        formControlName="cpf"
+        placeholder="Informe seu CPF"
+        class="form-control"
+      />
+      <div
+        class="errorInput"
+        *ngIf="formularioDieta.get('cpf')?.errors?.['required'] && formularioDieta.get('cpf')?.touched"
+      >
+        <span class="error-message">Por favor, preencha seu cpf.</span>
+      </div>
+      <div
+        class="errorInput"
+        *ngIf="
+          formularioDieta.get('cpf')?.invalid &&
+          formularioDieta.get('cpf')?.dirty
+        "
+      >
+        <div *ngIf="formularioDieta.get('cpf')?.errors?.['required']">
+          O CPF é obrigatório.
+        </div>
+        <div *ngIf="formularioDieta.get('cpf')?.errors?.['pattern']">
+          O CPF deve conter apenas números e ter 11 dígitos.
+        </div>
+      </div>
+    </div>
+
+    <div class="input">
+      <input
+        type="text"
+        formControlName="idade"
+        placeholder="Informe sua idade"
+        class="form-control"
+      />
+      <div
+        class="errorInput"
+        *ngIf="formularioDieta.get('idade')?.errors?.['required'] && formularioDieta.get('idade')?.touched"
+      >
+        <span class="error-message">Por favor, preencha sua idade.</span>
+      </div>
+      <div
+        class="errorInput"
+        *ngIf="
+          formularioDieta.get('idade')?.invalid &&
+          formularioDieta.get('idade')?.dirty
+        "
+      >
+        <div *ngIf="formularioDieta.get('idade')?.errors?.['required']">
+          A idade é obrigatória.
+        </div>
+        <div *ngIf="formularioDieta.get('idade')?.errors?.['pattern']">
+          A idade deve ser um número de dois dígitos.
+        </div>
+      </div>
+    </div>
+
+    <div class="input">
+      <input
+        type="text"
+        formControlName="altura"
+        placeholder="Informe seu altura"
+        class="form-control"
+      />
+      <div
+        class="errorInput"
+        *ngIf="formularioDieta.get('altura')?.errors?.['required'] && formularioDieta.get('altura')?.touched"
+      >
+        <span class="error-message">Por favor, preencha seu sexo.</span>
+      </div>
+      <div
+        class="errorInput"
+        *ngIf="
+          formularioDieta.get('altura')?.invalid &&
+          formularioDieta.get('altura')?.dirty
+        "
+      >
+        <div *ngIf="formularioDieta.get('altura')?.errors?.['required']">
+          A altura é obrigatória.
+        </div>
+        <div *ngIf="formularioDieta.get('altura')?.errors?.['pattern']">
+          A altura deve ser um número de três dígitos.
+        </div>
+      </div>
+    </div>
+
+    <div class="input">
+      <input
+        type="text"
+        formControlName="peso"
+        placeholder="Informe seu peso"
+        class="form-control"
+      />
+      <div
+        class="errorInput"
+        *ngIf="formularioDieta.get('peso')?.errors?.['required'] && formularioDieta.get('peso')?.touched"
+      >
+        <span class="error-message">Por favor, preencha seu peso.</span>
+      </div>
+      <div
+        class="errorInput"
+        *ngIf="
+          formularioDieta.get('peso')?.invalid &&
+          formularioDieta.get('peso')?.dirty
+        "
+      >
+        <div *ngIf="formularioDieta.get('peso')?.errors?.['required']">
+          O peso é obrigatório.
+        </div>
+        <div *ngIf="formularioDieta.get('peso')?.errors?.['pattern']">
+          O peso deve ser um número de três dígitos.
+        </div>
+      </div>
+    </div>
+
+    <div class="input">
+      <input
+        type="text"
+        formControlName="sexo"
+        placeholder="Informe seu sexo"
+        class="form-control"
+      />
+      <div
+        class="errorInput"
+        *ngIf="formularioDieta.get('sexo')?.errors?.['required'] && formularioDieta.get('sexo')?.touched"
+      >
+        <span class="error-message">Por favor, preencha seu sexo.</span>
+      </div>
+    </div>
 
     <div class="btnCreateDiet">
       <button class="btn" type="submit" (click)="criarPrompt()">
