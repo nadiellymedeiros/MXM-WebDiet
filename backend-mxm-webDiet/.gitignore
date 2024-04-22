@@ -1,5 +1,19 @@
 
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
+# Arquivos de assembly gerados automaticamente
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.exe.config
+*.deps.json
+*.sourcelink.json
+*.assemblyInfo.cs
+*.assemblyInfoInputs.cache*.CoreCompileInputs.cache
+*.fileListAbsolute.txt
+
+
+
 */Debug/
 */bin/
 */obj/
