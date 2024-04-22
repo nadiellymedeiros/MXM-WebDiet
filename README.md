@@ -1,1 +1,64 @@
-<h1 align="center"> Desafio MXM </h1>
+<h1 align="center"> MXM-WebDiet </h1>
+
+<p align="center">Desafio da empresa MXM no qual eu deveria buscar alguma ferramenta de inteligência artificial, que eu possa me comunicar via API, e executar a chamada e resposta referente aquela IA. </p>
+
+# Sumário
+
+- [Descrição](#Descrição)
+- [Features](#Features)
+- [Tecnologias Utilizadas](#Tecnologias-Utilizadas)
+- [Uso](#Uso)
+- [Autora](#Autora)
+
+# Descrição
+
+Desenvolvi uma aplicação para montar uma dieta, no qual o usuário digita suas infornações e obtém uma dieta de acordo com seu perfil.
+
+# Features
+
+### Frontend
+
+- [x] Navbar
+- [x] Formulário
+- [x] Dieta
+
+### Backend
+
+- [x] Requisições do tipo POST na API da OpenAI.
+
+# Tecnologias Utilizadas
+
+### Frontend
+
+- Angular
+
+### Backend
+
+- C#
+
+# Uso
+
+### Frontend
+
+Clonar o repositório, garantir que o NodeJS está instalado na máquina, e executar os seguintes comandos:
+
+npm install
+npm start
+
+### Backend
+
+Clonar o repositório, e executar o comando:
+
+dotnet run
+
+# Autora
+
+❤️ Feito com carinho e dedicação por:❤️
+
+<div ><img src="https://avatars.githubusercontent.com/u/105972020?v=4" width="100px;" alt=""/></div>
+
+<div ><a href="https://github.com/nadiellymedeiros">Nadielly Xavier</a></div>
+
+<div ><a href="https://www.linkedin.com/in/nadielly-xavier-de-medeiros/"><img src="https://img.shields.io/badge/-Nadielly-blue?style=flat-square&logo=Linkedin&logoColor=white"/></a></div>
+
+</br></br>
