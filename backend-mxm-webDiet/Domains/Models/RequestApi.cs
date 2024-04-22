@@ -6,7 +6,7 @@
 public RequestApiModel(Dieta dieta)
 {
      model = "gpt-3.5-turbo-instruct";
-    this.prompt = $"Preciso de um dieta para um dia completo, tenho{dieta.Idade} anos, peso {dieta.Peso}, tenho {dieta.Peso}m de altura e meu sexo é {dieta.Sexo}";   
+    this.prompt = $"Preciso de um dieta para um dia completo, tenho {dieta.Idade} anos, peso {dieta.Peso} kg, tenho {dieta.Altura} cm de altura e meu sexo é {dieta.Sexo}";   
     max_tokens = 15;
     temperature = 0;
 
