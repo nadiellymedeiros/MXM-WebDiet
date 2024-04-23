@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using mxm_webDiet.Controllers;
+using mxm_webDiet.Domains.dbContext;
 using mxm_webDiet.Infra.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,11 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+ var defaultConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    builder.Services.AddDbContext<DietDbContext>(options => {
+    options.UseSqlite(defaultConnectionString);
+    });
 
 builder.Services.AddCors(options =>
 {

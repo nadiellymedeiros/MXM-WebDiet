@@ -4,6 +4,7 @@ namespace mxm_webDiet.Domains.Models;
 
 public class User
 {
+[Key]
 [Required]
 public int Id { get; set; }
 
