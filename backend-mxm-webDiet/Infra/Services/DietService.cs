@@ -17,13 +17,21 @@ public class DietService
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
     }
 
-    public StringContent CreateContent(Dieta dieta)
+    public StringContent CreateContent()
         {
-        var model = new RequestApiModel(dieta);    
+        var model = new RequestApiModel();    
         var requestBody = JsonSerializer.Serialize(model);         
         var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
         return content;
         }
+
+// public StringContent CreateContent(User user)
+//         {
+//         var model = new RequestApiModel(user);    
+//         var requestBody = JsonSerializer.Serialize(model);         
+//         var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+//         return content;
+//         }
 
     public async Task<string> SendRequestToOpenAI(StringContent content)
     {   

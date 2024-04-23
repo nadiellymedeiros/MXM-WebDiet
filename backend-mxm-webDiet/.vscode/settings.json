@@ -1,0 +1,10 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "dietWebApi",
+      "database": "${workspaceFolder:backend-mxm-webDiet}/myApi.db"
+    }
+  ]
+}
