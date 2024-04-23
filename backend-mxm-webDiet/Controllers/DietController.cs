@@ -18,11 +18,11 @@ public class DietController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] Dieta dieta)
+    public async Task<IActionResult> Post([FromBody] User user)
     {
         try
         {
-            var content = _dietService.CreateContent(dieta);
+            var content = _dietService.CreateContent();
             var response = await _dietService.SendRequestToOpenAI(content);
 
             if (!string.IsNullOrEmpty(response))
