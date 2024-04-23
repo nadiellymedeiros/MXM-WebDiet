@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-
 using mxm_webDiet.Domains.Models;
 
 namespace mxm_webDiet.Domains.dbContext;

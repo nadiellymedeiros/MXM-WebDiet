@@ -9,7 +9,7 @@ public class Dietas
     public int Id { get; set; }
 
     public ResponseApiDTO? responseApiDTO { get; set; }
-   [Key]
+    [Key]
     [Required]
     public string? UserCpf {get;set;}
     public DateTime? CriadoEm { get; set; } = DateTime.Now;        
