@@ -42,39 +42,18 @@ export class HomeComponent {
       Validators.required,
       Validators.pattern(/^\d{11}$/),
     ]),
-    idade: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^\d{2}$/),
-    ]),
-    sexo: new FormControl('', Validators.required),
-    altura: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^\d{3}$/),
-    ]),
-    peso: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^\d{3}$/),
-    ]),
   });
 
   criarPrompt(): void {
     if (this.formularioDieta.valid) {
       const nome = this.formularioDieta.get('nome')?.value;
       const cpf = this.formularioDieta.get('cpf')?.value;
-      const idade = this.formularioDieta.get('idade')?.value;
-      const sexo = this.formularioDieta.get('sexo')?.value;
-      const altura = this.formularioDieta.get('altura')?.value;
-      const peso = this.formularioDieta.get('peso')?.value;
 
-      if (nome && cpf && idade && sexo && altura && peso) {
+      if (nome && cpf) {
         this.nome = nome;
         this.dietaService
           .criarPrompt({
             Nome: nome,
-            Idade: idade,
-            Altura: altura,
-            Peso: peso,
-            Sexo: sexo,
             Cpf: cpf,
           })
           .subscribe((dieta) => {
