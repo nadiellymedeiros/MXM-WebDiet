@@ -47,7 +47,7 @@ npm start
 
 ### Backend
 
-Clonar o repositório, e executar o comando:
+Clonar o repositório, colocar sua key da OpenAI no "API_KEY": "", que fica no arquivo appsettings.Development.json e executar o comando:
 
 dotnet run
 
