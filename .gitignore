@@ -14,9 +14,9 @@
 
 
 
-*/Debug/
-*/bin/
-*/obj/
+
+*/bin/*
+*/obj/*
 
 .vscode/*
 !.vscode/settings.json
