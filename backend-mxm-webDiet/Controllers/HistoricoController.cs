@@ -7,7 +7,7 @@ using mxm_webDiet.Infra.Services;
 namespace backend_mxm_webDiet.Controllers;
 
 [ApiController]
-[Route("api/historico")]
+[Route("api")]
 
 public class HistoricoController : ControllerBase
 {
@@ -22,7 +22,7 @@ public class HistoricoController : ControllerBase
 
     }
 
-    [HttpGet("dietas/{cpf}")]
+    [HttpGet("historico/{cpf}")]
     public IActionResult GetDietasByCpf(string cpf)
     {
         // Encontrar o usuário com o CPF fornecido

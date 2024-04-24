@@ -127,6 +127,7 @@ input::placeholder {
 
 .historico {
   width: 50%;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,17 +136,39 @@ input::placeholder {
   background: white;
   border: 1px solid black;
   border-radius: 5px;
+  /* overflow-y: auto; */
+}
+
+.modalHistorico {
+  height: 100%;
 }
 
 .modalContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 20px;
+  height: 60%;
+  overflow-y: auto;
+}
+
+.modalBody {
+  padding: 10px;
+  border-bottom: 1px solid #8a9197;
 }
 
 .modalFooter {
+  width: 100%;
   margin: auto;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .historico {
+    width: 100%;
+    height: 100%;
+  }
 }
