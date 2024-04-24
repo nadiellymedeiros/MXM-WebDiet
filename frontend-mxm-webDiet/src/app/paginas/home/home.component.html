@@ -85,4 +85,31 @@
   <div class="dietas">
     <div class="dieta">{{ dieta }}</div>
   </div>
+
+  <div class="btnHistorico">
+    <button class="btn" type="button" (click)="openHistorico()">
+      Ver Histórico
+    </button>
+  </div>
+</div>
+
+<div class="historicoSection" *ngIf="historicoDisponivel">
+  <div class="historico">
+    <div class="modalHistorico">
+      <div class="modalHeader">
+        <h1 class="modalTitle">Histórico</h1>
+      </div>
+
+      <div class="modalContent">
+        <div class="modalBody">
+          <p>Texto do corpo do modal, é aqui.</p>
+        </div>
+        <div class="modalFooter">
+          <button type="button" class="btn" (click)="closeHistorico()">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

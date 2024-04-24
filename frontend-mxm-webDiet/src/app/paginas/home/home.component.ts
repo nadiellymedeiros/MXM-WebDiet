@@ -20,17 +20,9 @@ export class HomeComponent {
   dieta: any;
   nome: string = '';
   dietaDisponivel: boolean = false;
+  historicoDisponivel: boolean = false;
 
   constructor(private rota: Router, private dietaService: DietaService) {}
-
-  // formularioDieta = new FormGroup({
-  //   nome: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^[a-zA-Z ]+$/)]),
-  //   cpf: new FormControl('', Validators.required),
-  //   idade: new FormControl('', Validators.required),
-  //   sexo: new FormControl('', Validators.required),
-  //   altura: new FormControl('', Validators.required),
-  //   peso: new FormControl('', Validators.required),
-  // });
 
   formularioDieta = new FormGroup({
     nome: new FormControl('', [
@@ -69,11 +61,16 @@ export class HomeComponent {
             }, 100);
           });
       }
-      // else {
-      //   alert('Por favor, preencha todos os campos corretamente.');
-      // }
     } else {
       this.formularioDieta.markAllAsTouched();
     }
+  }
+
+  openHistorico(): void {
+    this.historicoDisponivel = true;
+  }
+
+  closeHistorico(): void {
+    this.historicoDisponivel = false;
   }
 }

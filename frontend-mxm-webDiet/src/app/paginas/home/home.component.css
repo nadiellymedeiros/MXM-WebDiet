@@ -79,8 +79,14 @@ input::placeholder {
   border: #f86e02;
   border-radius: 5px;
   color: white;
-  height: 50px;
-  width: 30%;
+  padding: 18px;
+  border: none;
+  font-size: 16px;
+
+  letter-spacing: 0.8px;
+
+  /* height: 50px;
+  width: 30%; */
 }
 
 .btn:hover {
@@ -99,9 +105,47 @@ input::placeholder {
 
 .dietas {
   width: 80%;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
-.dieta {
+.btnHistorico {
+  padding: 20px;
+}
+
+.historicoSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.historico {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  background: white;
   border: 1px solid black;
+  border-radius: 5px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalFooter {
+  margin: auto;
+  padding: 20px;
 }
