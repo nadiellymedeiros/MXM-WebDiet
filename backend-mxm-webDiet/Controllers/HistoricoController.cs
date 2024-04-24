@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using mxm_webDiet.Domains.dbContext;
-using mxm_webDiet.Domains.Models;
 using mxm_webDiet.Infra.Services;
 
 namespace backend_mxm_webDiet.Controllers;
@@ -25,7 +24,7 @@ public class HistoricoController : ControllerBase
     [HttpGet("historico/{cpf}")]
     public IActionResult GetDietasByCpf(string cpf)
     {
-        // Encontrar o usuário com o CPF fornecido
+
         var user = _dietDbContext.Dietas.FirstOrDefault(d => d.UserCpf == cpf);
 
         if (user == null)
@@ -33,7 +32,7 @@ public class HistoricoController : ControllerBase
             return NotFound("Usuário não encontrado.");
         }
 
-        // Obter as dietas associadas a esse usuário
+
         var dietas = _dietDbContext.Dietas.Include(a => a.responseApiDTO).Include(c => c.responseApiDTO.Choice).Where(d => d.UserCpf == cpf).OrderByDescending(d => d.CriadoEm).ToList();
 
         if (dietas.Count == 0)
@@ -43,20 +42,5 @@ public class HistoricoController : ControllerBase
 
         return Ok(dietas);
     }
-
-    // [HttpGet("{UserCpf:string}")]
-    //     public ActionResult <List<Dietas>> GetAll(int UserCpf)
-    //     {
-    //         var dietas = _dietDbContext.Dietas.Where(d => d.UserCpf == user.Cpf).ToList();
-
-    //            if(dietas != null){
-
-
-    //         return Ok(dietas);
-
-
-    //     }
-    //     return  NotFound("Não tem dietas para este usuário");       
-    //     }
 
 }

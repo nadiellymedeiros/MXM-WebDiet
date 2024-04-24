@@ -13,12 +13,12 @@ namespace mxm_webDiet.Controllers;
 public class DietController : ControllerBase
 {
     private readonly DietService _dietService;
-    private readonly DietDbContext  _dietDbContext;
+    private readonly DietDbContext _dietDbContext;
 
     public DietController(DietService dietService, DietDbContext dietDbContext)
     {
-         _dietService = dietService;
-         _dietDbContext = dietDbContext;
+        _dietService = dietService;
+        _dietDbContext = dietDbContext;
     }
 
     [HttpPost]
@@ -30,7 +30,7 @@ public class DietController : ControllerBase
             var response = await _dietService.SendRequestToOpenAI(content);
 
             var novaDieta = new Dietas
-              {
+            {
                 responseApiDTO = new ResponseApiDTO
                 {
                     Choice = new ChoiceDTO
@@ -38,21 +38,21 @@ public class DietController : ControllerBase
                         Text = response
                     }
                 },
-                UserCpf = userDto.Cpf, 
-              };
-             _dietDbContext.Dietas.Add(novaDieta);
-              _dietDbContext.SaveChanges();
-            
+                UserCpf = userDto.Cpf,
+            };
+            _dietDbContext.Dietas.Add(novaDieta);
+            _dietDbContext.SaveChanges();
+
 
             if (!string.IsNullOrEmpty(response))
             {
-                return  Ok("{\"resposta\": \"" + response + "\"}");;
+                return Ok("{\"resposta\": \"" + response + "\"}"); ;
             }
             return BadRequest("Não foi possível montar sua dieta");
         }
         catch (Exception e)
-            {
-                return StatusCode(500, "Não foi possível acessar sua dieta: " + e.Message);
-            } 
+        {
+            return StatusCode(500, "Não foi possível acessar sua dieta: " + e.Message);
+        }
     }
 }
