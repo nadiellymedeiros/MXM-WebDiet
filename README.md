@@ -2,7 +2,7 @@
 
 <p align="center">Desafio da empresa MXM no qual eu deveria buscar alguma ferramenta de inteligência artificial, que eu possa me comunicar via API, e executar a chamada e resposta referente aquela IA. </p>
 
-<h3 align="center">deploy: https://mxm-web-diet.netlify.app/home </h3>
+<h3 align="center">deploy: https://mxm-web-diet.netlify.app </h3>
 
 # Sumário
 
