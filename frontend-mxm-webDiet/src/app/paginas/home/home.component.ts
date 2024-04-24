@@ -8,18 +8,20 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DietaService } from '../../servicos/dietaService/dieta.service';
+import { HistoricoComponent } from '../../componentes/historico/historico.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, HistoricoComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
   dieta: any;
   nome: string = '';
-  dietaDisponivel: boolean = false;
+  dietaDisponivel: boolean = true;
+  historicoDisponivel: boolean = true;
 
   constructor(private rota: Router, private dietaService: DietaService) {}
 
@@ -75,5 +77,13 @@ export class HomeComponent {
     } else {
       this.formularioDieta.markAllAsTouched();
     }
+  }
+
+  openHistorico(): void {
+    this.historicoDisponivel = true;
+  }
+
+  closeHistorico(): void {
+    this.historicoDisponivel = false;
   }
 }
