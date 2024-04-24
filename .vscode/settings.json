@@ -1,0 +1,10 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:mxm-webDiet}/backend-mxm-webDiet/dietas.db",
+      "name": "mxmDb"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ public class RequestApiModel
   {
     model = "gpt-3.5-turbo-instruct";
     this.prompt = $"Preciso de um dieta para um dia completo";
-    max_tokens = 15;
+    max_tokens = 500;
     temperature = 0;
 
   }
