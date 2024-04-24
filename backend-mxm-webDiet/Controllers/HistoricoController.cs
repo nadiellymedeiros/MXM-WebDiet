@@ -34,7 +34,7 @@ public class HistoricoController : ControllerBase
         }
 
         // Obter as dietas associadas a esse usuário
-        var dietas = _dietDbContext.Dietas.Include(a => a.responseApiDTO).Include(c => c.responseApiDTO.Choice).Where(d => d.UserCpf == cpf).ToList();
+        var dietas = _dietDbContext.Dietas.Include(a => a.responseApiDTO).Include(c => c.responseApiDTO.Choice).Where(d => d.UserCpf == cpf).OrderByDescending(d => d.CriadoEm).ToList();
 
         if (dietas.Count == 0)
         {
