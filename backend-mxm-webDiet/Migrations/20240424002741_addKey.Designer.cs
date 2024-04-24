@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using mxm_webDiet.Domains.dbContext;
 
@@ -10,9 +11,11 @@ using mxm_webDiet.Domains.dbContext;
 namespace backend_mxm_webDiet.Migrations
 {
     [DbContext(typeof(DietDbContext))]
-    partial class DietDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240424002741_addKey")]
+    partial class addKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
@@ -49,21 +52,19 @@ namespace backend_mxm_webDiet.Migrations
 
             modelBuilder.Entity("mxm_webDiet.Domains.Models.Dietas", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("UserCpf")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("UserCpf")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Id")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int?>("responseApiDTOId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserCpf");
 
                     b.HasIndex("responseApiDTOId");
 

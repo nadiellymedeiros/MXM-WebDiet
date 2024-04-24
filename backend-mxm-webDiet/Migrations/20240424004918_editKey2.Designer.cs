@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using mxm_webDiet.Domains.dbContext;
 
@@ -10,9 +11,11 @@ using mxm_webDiet.Domains.dbContext;
 namespace backend_mxm_webDiet.Migrations
 {
     [DbContext(typeof(DietDbContext))]
-    partial class DietDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240424004918_editKey2")]
+    partial class editKey2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
