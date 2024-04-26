@@ -14,7 +14,8 @@
 
 # Descrição
 
-Desenvolvi uma aplicação para montar uma dieta, no qual o usuário digita suas infornações e obtém uma dieta de acordo com seu perfil.
+Desenvolvi uma aplicação para montar uma dieta, no qual o usuário digita suas infornações e obtém uma dieta.
+O usuário pode abrir o histórico e ver suas últimas buscas.
 
 # Features
 
@@ -28,7 +29,7 @@ Desenvolvi uma aplicação para montar uma dieta, no qual o usuário digita suas
 ### Backend
 
 - [x] Requisição do tipo POST na API da OpenAI.
-- [x] Requisição do tipo GET no banco de dados.
+- [x] Acesso ao banco de dados SQLite.
 
 # Tecnologias Utilizadas
 
