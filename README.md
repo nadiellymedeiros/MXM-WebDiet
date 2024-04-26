@@ -23,10 +23,12 @@ Desenvolvi uma aplicação para montar uma dieta, no qual o usuário digita suas
 - [x] Navbar
 - [x] Formulário
 - [x] Dieta
+- [x] Histórico de buscas
 
 ### Backend
 
-- [x] Requisições do tipo POST na API da OpenAI.
+- [x] Requisição do tipo POST na API da OpenAI.
+- [x] Requisição do tipo GET no banco de dados.
 
 # Tecnologias Utilizadas
 
